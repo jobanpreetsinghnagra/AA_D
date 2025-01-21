@@ -4,13 +4,13 @@ using namespace std;
 class Stack
 {
     public:
-    int top;
-    int arr[100];
-    Stack(){top = -1;}
+    int top; ///initialise top pointer
+    int arr[100]; ///initialise stack with 100
+    Stack(){top = -1;} ///set top pointer to -1
 
     void push(int x)
     {
-        if(top>100){cout<<"stack overflow"<<endl; return;}
+        if(top>100){cout<<"stack overflow"<<endl; return;} ///stack full case
         arr[++top] = x;
         cout<<"Pushed: "<<x <<" into the stack"<<endl;
     }
@@ -18,7 +18,7 @@ class Stack
     
     int pop()
     {
-        if(top<0){cout<<"stack underflow"<<endl; return 0;}
+        if(top<0){cout<<"stack underflow"<<endl; return 0;} ///stack empty case
         return arr[top--]; 
     }
 

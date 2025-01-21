@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int linear(vector<int> &arr, int target)
+int linear(vector<int> &arr, int target) //linear search function , taking KEY(target) , and array as inputs
 {
     int n = arr.size();
-    if(n == 0)return -1;
+    if(n == 0)return -1;  ///edge case of an empty array
     for(int i = 0 ; i<n;i++)
     {
         if(arr[i] == target)

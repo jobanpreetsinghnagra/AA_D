@@ -4,11 +4,11 @@ using namespace std;
 class Array {
 private:
     int* arr;       // Pointer to the array
-    int capacity;   // Maximum size of the array
+    int capacity;   // Max size of the array
     int size;       // Current number of elements in the array
 
 public:
-    // Constructor to initialize the array with a given capacity
+    // Constructor to initialize the array 
     Array(int cap) {
         capacity = cap;
         size = 0;
@@ -35,7 +35,7 @@ public:
         }
         arr[index] = value;
         size++;
-        cout << "Inserted " << value << " at index " << index << "." << endl;
+        cout << "Inserted: " << value << " at index " << index << "." << endl;
     }
 
     // Function to delete an element at a given index
@@ -57,7 +57,7 @@ public:
             cout << "Invalid index. Update failed." << endl;
             return;
         }
-        cout << "Updated element at index " << index << " from " << arr[index] << " to " << value << "." << endl;
+        cout << "Updated element at index: " << index << " from " << arr[index] << " to " << value << "." << endl;
         arr[index] = value;
     }
 

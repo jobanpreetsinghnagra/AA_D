@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-template <typename T, size_t N>
-int bsearch(T (&a)[N], T target) {
-    // N is automatically deduced as the size of the array 'a'
-    sort(a, a + N);
-
+bool bin_search(vector<int>&arr, int target) {
+    
+    sort(arr.begin,arr.end());
+    int N = arr.begin();
+    if(N == 0)return false;
     int low = 0;
     int high = N - 1;
 
@@ -13,10 +13,12 @@ int bsearch(T (&a)[N], T target) {
         int mid = low + (high - low) / 2;
 
         if (a[mid] == target) {
-            return mid;
-        } else if (a[mid] < target) {
+            return true;
+        }
+        else if (a[mid] < target) {
             low = mid + 1;
-        } else {
+        }
+        else {
             high = mid - 1;
         }
     }
@@ -31,13 +33,7 @@ int main() {
     cout << "Enter the key: ";
     cin >> key;
 
-    int result = bsearch(arr, key); 
-
-    if (result != -1) {
-        cout << "Element found at index " << result << endl;
-    } else {
-        cout << "Element not found" << endl;
-    }
-
+    bool result = bin_search(arr, key);
+     
     return 0;
 }
